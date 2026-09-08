@@ -19,7 +19,7 @@ export function createApp() {
   // be allowed — a single-origin CORS config blocks whichever one isn't
   // listed. Falls back to allowing no-origin requests (curl, Postman,
   // server-to-server) since `origin` is undefined for those, not "".
-  const allowedOrigins = [env.clientUrl, env.adminClientUrl].filter(Boolean);
+  const allowedOrigins = [...env.clientUrls, ...env.adminClientUrls].filter(Boolean);
   app.use(
     cors({
       origin: (origin, callback) => {

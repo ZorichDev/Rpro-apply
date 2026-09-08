@@ -21,10 +21,11 @@ export const env = {
   jwtRefreshSecret: required("JWT_REFRESH_SECRET"),
   jwtAccessExpiresIn: process.env.JWT_ACCESS_EXPIRES_IN ?? "15m",
   jwtRefreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN ?? "7d",
-  clientUrl: process.env.CLIENT_URL ?? "http://localhost:5173",
+clientUrl: (process.env.CLIENT_URL ?? "http://localhost:5173").split(",")[0].trim(),
+  clientUrls: (process.env.CLIENT_URL ?? "http://localhost:5173").split(",").map(s => s.trim()),
   // The admin app runs as a genuinely separate frontend (its own port),
   // so it needs its own CORS allowance — see app.ts's allowedOrigins list.
-  adminClientUrl: process.env.ADMIN_CLIENT_URL ?? "http://localhost:5174",
+adminClientUrls: (process.env.ADMIN_CLIENT_URL ?? "http://localhost:5175").split(",").map(s => s.trim()),
   // All optional — if SMTP_HOST is unset, utils/email.ts falls back to
   // logging emails to the console instead of sending them for real.
   smtp: {
