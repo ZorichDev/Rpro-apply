@@ -6,4 +6,12 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  build: {
+    commonjsOptions: {
+      include: [/shared/, /node_modules/],
+    },
+  },
+  optimizeDeps: {
+    include: ["shared"],
+  },
 });
