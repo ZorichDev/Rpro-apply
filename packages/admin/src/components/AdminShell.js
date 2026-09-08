@@ -1,0 +1,7 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useAuthStore } from "../store/authStore";
+export default function AdminShell({ title, children }) {
+    const user = useAuthStore((s) => s.user);
+    const logout = useAuthStore((s) => s.logout);
+    return (_jsxs("div", { className: "min-h-screen bg-soft", children: [_jsx("div", { className: "sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-line", children: _jsxs("div", { className: "max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between", children: [_jsxs("div", { className: "flex items-center gap-2.5", children: [_jsx("img", { src: "/logo.png", alt: "logo", className: "w-8 h-8 rounded-lg object-contain" }), _jsxs("span", { className: "text-base font-extrabold tracking-tight", children: ["R-Pro ", _jsx("span", { className: "text-brand", children: "Apply" }), " ", _jsx("span", { className: "text-muted font-normal", children: "Admin" })] })] }), _jsxs("div", { className: "flex items-center gap-5 text-sm", children: [_jsx("span", { className: "text-muted hidden md:inline", children: user?.email }), _jsx("button", { onClick: logout, className: "text-ink2 font-semibold hover:text-brand transition-colors", children: "Sign out" })] })] }) }), _jsxs("main", { className: "max-w-6xl mx-auto px-6 md:px-8 py-10", children: [_jsx("h1", { className: "font-display text-3xl font-black tracking-tight mb-8", children: title }), children] })] }));
+}
