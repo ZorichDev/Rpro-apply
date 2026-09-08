@@ -6,7 +6,7 @@ import { Student } from "../models/Student";
 import { Institution } from "../models/Institution";
 import { Vendor } from "../models/Vendor";
 import { RecruitmentPartner } from "../models/RecruitmentPartner";
-import { signAccessToken, signRefreshToken } from "../utils/jwt";
+import { signAccessToken, signRefreshToken, verifyRefreshToken } from "../utils/jwt";
 import { generateReferralCode } from "../utils/referralCode";
 import { generateVerificationToken, hashToken } from "../utils/verificationToken";
 import { sendEmail } from "../utils/email";
