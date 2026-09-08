@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-ink antialiased;
+  }
+  a, button, input, select, textarea {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand;
+  }
+}
+
+@layer components {
+  .field-label {
+    @apply block text-sm text-muted mb-1.5 font-medium;
+  }
+  .field-input {
+    @apply w-full bg-white border border-line rounded-lg px-3.5 py-2.5 text-sm
+           focus:outline-none focus:border-brand transition-colors;
+  }
+  .btn-primary {
+    @apply bg-brand text-white rounded-lg px-5 py-2.5 text-sm font-bold
+           hover:bg-brand-dark disabled:opacity-50 transition-colors
+           shadow-[0_6px_20px_rgba(200,16,46,0.25)];
+  }
+  .btn-secondary {
+    @apply bg-transparent border border-line rounded-lg px-5 py-2.5 text-sm font-semibold
+           text-ink2 hover:border-ink2 transition-colors;
+  }
+  .card {
+    @apply bg-white border border-line rounded-2xl p-6;
+  }
+  .badge {
+    @apply inline-block text-xs font-bold px-2.5 py-1 rounded-full;
+  }
+  .badge-success { @apply bg-success/10 text-success; }
+  .badge-amber { @apply bg-amber-500/10 text-amber-500; }
+  .badge-info { @apply bg-info/10 text-info; }
+  .badge-brand { @apply bg-brand/10 text-brand; }
+  .badge-muted { @apply bg-ink/5 text-muted; }
+}

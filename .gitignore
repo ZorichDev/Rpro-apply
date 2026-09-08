@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.log
+
+# Uploaded documents (local disk storage) — never commit real student
+# documents to a repo, and this is dev-only storage anyway.
+packages/backend/uploads/
